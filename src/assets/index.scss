@@ -1,0 +1,76 @@
+.react-form {
+  &__popup {
+    width: 100%;
+  }
+
+  &__placeholder {
+    color: #cccccc;
+  }
+
+  &__field-error {
+    font-size: 24px;
+    color: #fc3333;
+  }
+
+  .adm-list-item.is-req .adm-list-item-title:before {
+    color: #fc3333;
+    content: "*";
+    font-weight: 700;
+    margin-right: 8px;
+    position: absolute;
+    transform: translateX(-20px);
+  }
+
+  .adm-list-item:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background: #fc3333;
+    z-index: 2;
+    opacity: 0;
+    transition: width 500ms ease, opacity 300ms;
+  }
+
+  .adm-list-item.is-error:after {
+    width: 100%;
+    opacity: 1;
+  }
+
+  .adm-input-number-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .adm-input-number {
+      flex: 1;
+      /*padding-left: var(--padding-left);
+      padding-right: var(--padding-left);*/
+    }
+
+    .adm-input-element {
+      text-align: center;
+    }
+
+    .adm-input-number-left, .adm-input-number-right {
+      width: 48px;
+      height: 48px;
+      background: #F3F3F3;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--adm-font-size-6);
+    }
+
+    &.is-controller-hidden {
+      .adm-input-element {
+        text-align: left;
+      }
+
+      .adm-input-number-left, .adm-input-number-right {
+        display: none;
+      }
+    }
+  }
+}
