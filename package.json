@@ -1,6 +1,6 @@
 {
   "name": "@kne/react-form-antd-taro",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "dependencies": {
     "@kne/antd-taro": "^1.0.0-alpha.0",
     "@kne/lodash-wechat": "^4.17.21",
