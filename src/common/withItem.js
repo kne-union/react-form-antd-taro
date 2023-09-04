@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 const withItem = (WrappedComponent) => (props) => {
   const listProps = props.labelHidden === true ? {} : {title: props.label};
-  const [isError, setIsError] = useState(false);n
+  const [isError, setIsError] = useState(false);
   return <List.Item {...listProps} className={classnames('react-form-list-item', {
     'is-req': typeof props.rule === 'string' && (props.rule || '').split(' ').indexOf('REQ') > -1, 'is-error': isError
   })}>
