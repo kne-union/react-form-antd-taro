@@ -8,7 +8,7 @@ import {hooks} from "../helper";
 import withItem from "../common/withItem";
 import classnames from 'classnames';
 
-const {useDecorator, useUIDecorator} = hooks;
+const {useDecorator} = hooks;
 
 const InputNumberInner = (props) => {
     const [value, onChange] = useControlValue(props);
@@ -74,12 +74,7 @@ const InputNumberField = (props) => {
     return render(InputNumberInner);
 };
 
-const InputNumberFieldWithUI = (props) => {
-    const render = useUIDecorator(Object.assign({placeholder: `请输入${props.label}`}, props));
-    return render(InputNumberField);
-};
-
 InputNumberField.Item = withItem(InputNumberField);
-InputNumberField.Field = InputNumberFieldWithUI;
+InputNumberField.Field = InputNumberInner;
 
 export default InputNumberField;

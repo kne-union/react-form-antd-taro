@@ -14,5 +14,6 @@ const Switch = (props) => {
 };
 
 Switch.Item = withItem(Switch);
+Switch.Field = _Switch;
 
 export default Switch;
