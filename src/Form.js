@@ -26,4 +26,5 @@ Form.defaultProps = {
   scrollToError: true
 };
 
+export {ReactForm};
 export default Form;
