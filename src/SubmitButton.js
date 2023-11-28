@@ -5,7 +5,7 @@ import {Button} from '@kne/antd-taro';
 const SubmitButton = ({realTime, disabled, ...props}) => {
   const {isPass, isLoading, ...submitProps} = useSubmit(props);
   return (
-    <Button loading={isLoading} disabled={disabled || (realTime ? !isPass : false)} {...submitProps} {...props}/>);
+    <Button {...props} loading={isLoading} disabled={disabled || (realTime ? !isPass : false)} {...submitProps}/>);
 };
 
 SubmitButton.defaultProps = {
