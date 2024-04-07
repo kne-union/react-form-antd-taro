@@ -10,7 +10,7 @@ on:
       - closed
 jobs:
   build-and-publish-lib:
-    uses: kne-union/actions/.github/workflows/build-and-publish-lib-workflow.yml@master
+    uses: kne-union/actions/.github/workflows/publish-libs-no-example-workflow.yml@master
     secrets: inherit
     with:
       package_name: '@kne/react-form-antd-taro'
