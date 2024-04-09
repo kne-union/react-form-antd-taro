@@ -24,6 +24,7 @@ const useUIDecorator = props => {
         setError,
         onChange,
         onBlur,
+        associationOptions,
         ...others
     } = props;
     const [isSubmit, setIsSubmit] = useState(false);
@@ -53,13 +54,13 @@ const useUIDecorator = props => {
     return useCallback(WrappedComponent => {
         return (<FieldPropsProvider props={props}>
             <View ref={fieldRef} className={'react-form__field-main'}>
-                <WrappedComponent {...others} onChange={handlerChange} onBlur={handlerOnBlur}
+                <WrappedComponent {...Object.assign({}, others, associationOptions)} onChange={handlerChange}
+                                  onBlur={handlerOnBlur}
                                   className={classnames('react-form__field-component', className)}/>
                 {description ? <View className="react-form__field-describable">{description}</View> : null}
-                {/*{errMsg ? <View className="react-form__field-error">{errMsg}</View> : null}*/}
             </View>
         </FieldPropsProvider>);
-    }, [others, className, handlerChange, props, description, handlerOnBlur]);
+    }, [fieldRef, others, className, handlerChange, props, description, handlerOnBlur]);
 };
 
 export default useUIDecorator;
