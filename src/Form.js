@@ -1,5 +1,5 @@
 import React, {forwardRef} from 'react';
-import {Form as ReactForm} from '@kne/react-form';
+import ReactForm from '@kne/react-form';
 import classnames from 'classnames';
 import {View} from '@tarojs/components';
 import Taro from '@tarojs/taro';
