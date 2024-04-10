@@ -24,12 +24,22 @@ npm i --save @kne/react-form-antd-taro
 
 ```jsx
 const {default: Form, Input, TextArea, CheckList, SubmitButton, Picker, InputNumber, Selector, Slider, Switch} = form;
-const {List} = antd;
+const {List, Button} = antd;
+const {useRef} = React;
 
 const BaseExample = () => {
-    return <Form onSubmit={(data) => {
+    const formApi = useRef();
+    return <Form ref={formApi} data={{
+        name: '哈哈哈', des: '描述描述'
+    }} onSubmit={(data) => {
         console.log(data);
     }}>
+        <Button onClick={() => {
+            formApi.current.setFields([{name: 'name', value: '哈哈哈哈啊啊啊'}, {
+                name: 'des',
+                value: '描述描述描述描述描述描述描述描述描述描述'
+            }]);
+        }}>设置Form值</Button>
         <List>
             <Input.Item name="name" label="名称" labelTips="哈哈哈" rule="REQ LEN-0-10"/>
             <CheckList.Item name="type" label="类型"
