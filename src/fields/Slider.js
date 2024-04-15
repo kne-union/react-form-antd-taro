@@ -1,4 +1,3 @@
-import React from 'react';
 import {Slider as AntdSlider} from '@kne/antd-taro';
 import {hooks} from '../helper';
 import withItem from "../common/withItem";
