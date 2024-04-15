@@ -1,4 +1,3 @@
-import React from 'react';
 import {Selector} from '@kne/antd-taro';
 import {hooks} from '../helper';
 import withFetchList from '../common/withFetchList';
